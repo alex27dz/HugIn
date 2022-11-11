@@ -38,118 +38,116 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Container(
         width: 390.0,
         height: 844.0,
-        child: Stack(
-            clipBehavior: Clip.none,
-            fit: StackFit.expand,
-            alignment: Alignment.center,
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.zero,
-                child: Container(
-                  color: Color.fromARGB(255, 83, 219, 146),
+        child: Stack(clipBehavior: Clip.none, fit: StackFit.expand, alignment: Alignment.center, children: [
+          ClipRRect(
+            borderRadius: BorderRadius.zero,
+            child: Container(
+              color: Color.fromARGB(255, 83, 219, 146),
+            ),
+          ),
+          // Child menu
+          Positioned(
+            left: null,
+            top: 800,
+            right: null,
+            bottom: null,
+            width: 327.0,
+            height: 54.0,
+            child: GeneratedComponent3Widget2(),
+          ),
+          // Trainer menu
+          Positioned(
+            left: null,
+            top: 730.0,
+            right: null,
+            bottom: null,
+            width: 327.0,
+            height: 54.0,
+            child: GeneratedComponent4Widget15(),
+          ),
+          // user information
+          Positioned(
+            left: null,
+            top: 280.0,
+            right: null,
+            bottom: null,
+            width: 310.0,
+            height: 500.0,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                SizedBox(
+                  height: 10,
                 ),
-              ),
-              Positioned(
-                left: 31.0,
-                top: 700.0,
-                right: null,
-                bottom: null,
-                width: 327.0,
-                height: 54.0,
-                child: GeneratedComponent3Widget2(),
-              ),
-              Positioned(
-                left: 31.0,
-                top: 630.0,
-                right: null,
-                bottom: null,
-                width: 327.0,
-                height: 54.0,
-                child: GeneratedComponent4Widget15(),
-              ),
-              Positioned(
-                left: 30.0,
-                top: 280.0,
-                right: null,
-                bottom: null,
-                width: 310.0,
-                height: 500.0,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    SizedBox(
-                      height: 10,
-                    ),
-                    // Text("${loggedInUser.firstName} ${loggedInUser.secondName}",
-                    //     style: TextStyle(
-                    //       color: Colors.black54,
-                    //       fontWeight: FontWeight.w500,
-                    //     )),
-                    Text("Name",
-                        style: TextStyle(
-                          color: Colors.black54,
-                          fontWeight: FontWeight.w500,
-                        )),
-                    // Text("${loggedInUser.email}",
-                    //     style: TextStyle(
-                    //       color: Colors.black54,
-                    //       fontWeight: FontWeight.w500,
-                    //     )),
-                    Text("Email",
-                        style: TextStyle(
-                          color: Colors.black54,
-                          fontWeight: FontWeight.w500,
-                        )),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    ActionChip(
-                      label: Text("Log out"),
-                      onPressed: () => Navigator.pushNamed(
-                          context, '/Generated1_wlcomepageWidget'),
-                    ),
-                  ],
+                // Text("${loggedInUser.firstName} ${loggedInUser.secondName}",
+                //     style: TextStyle(
+                //       color: Colors.black54,
+                //       fontWeight: FontWeight.w500,
+                //     )),
+                Text("Alex Dezho",
+                    style: TextStyle(
+                      color: Colors.black54,
+                      fontSize: 19.0,
+                      fontWeight: FontWeight.w900,
+                    )),
+
+                // Text("${loggedInUser.email}",
+                //     style: TextStyle(
+                //       color: Colors.black54,
+                //       fontWeight: FontWeight.w500,
+                //     )),
+                Text("alex27dz@gmail.com",
+                    style: TextStyle(
+                      color: Colors.black54,
+                      fontSize: 19.0,
+                      fontWeight: FontWeight.w900,
+                    )),
+                SizedBox(
+                  height: 20,
                 ),
-              ),
-              Positioned(
-                left: 0.0,
-                top: -20.0,
-                right: 0.0,
-                bottom: 0.0,
-                width: null,
-                height: null,
-                child: LayoutBuilder(builder:
-                    (BuildContext context, BoxConstraints constraints) {
-                  final double width = constraints.maxWidth * 0.717128186348157;
+                // log out button
+                ActionChip(
+                  label: Text("Log out"),
+                  onPressed: () => Navigator.pushNamed(context, '/Generated1_wlcomepageWidget'),
+                ),
+              ],
+            ),
+          ),
+          Positioned(
+            left: 0.0,
+            top: -20.0,
+            right: 0.0,
+            bottom: 0.0,
+            width: null,
+            height: null,
+            child: LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
+              final double width = constraints.maxWidth * 0.717128186348157;
+              final double height = constraints.maxHeight * 0.07010365888405751;
 
-                  final double height =
-                      constraints.maxHeight * 0.07010365888405751;
-
-                  return Stack(children: [
-                    TransformHelper.translate(
-                        x: constraints.maxWidth * 0.14912829276842948,
-                        y: constraints.maxHeight * 0.4180948700385071,
-                        z: 0,
-                        child: Container(
-                          width: width,
-                          height: height,
-                          child:
-                              GeneratedAccountsuccessfullyregisteredWidget1(),
-                        ))
-                  ]);
-                }),
-              ),
-              Positioned(
-                left: 8.0,
-                top: 0.0,
-                right: null,
-                bottom: null,
-                width: 375.0,
-                height: 464.0,
-                child: GeneratedAccountsuccessfullyregisteredWidget2(),
-              )
-            ]),
+              return Stack(children: [
+                TransformHelper.translate(
+                    x: constraints.maxWidth * 0.14912829276842948,
+                    y: constraints.maxHeight * 0.4180948700385071,
+                    z: 0,
+                    child: Container(
+                      width: width,
+                      height: height,
+                      child: GeneratedAccountsuccessfullyregisteredWidget1(),
+                    ))
+              ]);
+            }),
+          ),
+          Positioned(
+            left: null,
+            top: 0.0,
+            right: null,
+            bottom: null,
+            width: 375.0,
+            height: 464.0,
+            child: GeneratedAccountsuccessfullyregisteredWidget2(),
+          )
+        ]),
       ),
     ));
   }
