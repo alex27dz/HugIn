@@ -1,4 +1,4 @@
-#Fri Oct 14 16:45:30 EDT 2022
-base.0=/Users/alexdezho/Documents/HugIn/FrontEnd/mvp/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+#Fri Nov 11 16:40:03 EST 2022
+base.0=/Users/alexdezho/Documents/HugIn/FrontEnd/mvp_version1.0/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

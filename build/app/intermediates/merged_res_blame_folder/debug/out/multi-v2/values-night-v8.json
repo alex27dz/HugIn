@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/alexdezho/Documents/HugIn/FrontEnd/mvp/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "/Users/alexdezho/Documents/HugIn/FrontEnd/mvp_version1.0/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/Users/alexdezho/Documents/HugIn/FrontEnd/mvp/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/Users/alexdezho/Documents/HugIn/FrontEnd/mvp_version1.0/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

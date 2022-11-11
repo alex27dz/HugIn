@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "945968530792",
+    "project_id": "huginauth-8b328",
+    "storage_bucket": "huginauth-8b328.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:945968530792:android:5c1b309079a54b7d7b82dd",
+        "android_client_info": {
+          "package_name": "com.example.flutterapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "945968530792-fsqrchgc1ammvscjlnfao48c5ci1b24n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9vSGF-eIwW7TGM8oq3tMmaJ9KGDag0a0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "945968530792-fsqrchgc1ammvscjlnfao48c5ci1b24n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "945968530792-cmucnpoe7ves2a9kgkvnsnjqfhllfdt5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.helloWorldmvp",
+                "app_store_id": "123456789"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
