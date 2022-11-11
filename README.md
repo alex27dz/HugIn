@@ -3,32 +3,7 @@
 
 # HugIn MVP version
 
-hi
-
 HUGIN
-
-- [ ] Review the tutorials
-- [ ] Add functionality and firebase to:
-- [ ] Registration page
-- [ ] Logged in
-- [ ] Log in
-- [ ] Forgot password https://www.youtube.com/watch?v=3DO6Th9A7mY&t=4s
-- [ ] Google authentication
-- [ ] Unique ID per user
-- [ ] Child menu
-- [ ] Trainer menu
-
-- [ ] Create input parameters
-- [ ] http get + post requests response async functions json
-- [ ] Rest APIs
-
-- [ ] Backend server - Flutter Django python create database and information inside tables + mysql , requests, rest API’s to work with backend
-- [ ] Testing the app locally
-- [ ] Upload app to:
-- [ ] GitHub
-- [ ] Cloud
-- [ ] App Store
-- [ ] Google play
 
 <img width="658" alt="App arch" src="https://user-images.githubusercontent.com/52358947/200027393-0205289b-2e84-4d9a-9bf2-bdef3e6779f5.png">
 
