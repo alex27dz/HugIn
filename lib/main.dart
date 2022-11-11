@@ -38,6 +38,7 @@ import 'package:flutterapp/mvpupdatedapp/generated35_requestswidget/Generated35_
 import 'package:flutterapp/mvpupdatedapp/generated36_requestswidget/Generated36_REQUESTSWidget.dart';
 import 'package:flutterapp/mvpupdatedapp/generated37_childrenlistwidget/Generated37_childrenlistWidget.dart';
 import 'package:flutterapp/mvpupdatedapp/generated38_requestswidget/Generated38_REQUESTSWidget.dart';
+// import 'package:firebase_core/firebase_core.dart';
 
 void main() {
   runApp(mvpupdatedApp());
@@ -51,66 +52,37 @@ class mvpupdatedApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      // Strating with first window of the flow
       initialRoute: '/Generated1_wlcomepageWidget',
-      /* 
-      In flutter, the pages or screens are called Routes. In a flutter, 
-      routes are referred to as Widgets. 
-      In Flutter, a Page / Screen is called a Route.
-      Creating routes: A route can be written in the form of a “Class” 
-      in Dart using object-oriented concepts. Each route can be written 
-      as a separate class and has its own contents and UI. 
-      */
+      // In flutter, the pages or screens are called Routes. Routes are referred to as Widgets. Creating routes: A route can be written in the form of a “Class” in Dart using object-oriented concepts. Each route can be written as a separate class and has its own contents and UI.
       routes: {
-        '/Generated1_wlcomepageWidget': (context) =>
-            Generated1_wlcomepageWidget(),
+        '/Generated1_wlcomepageWidget': (context) => Generated1_wlcomepageWidget(),
         '/Generated2_signinWidget': (context) => Generated2_signinWidget(),
         '/Generated3_signinWidget': (context) => LoginScreen(),
-        '/Generated4_forgotpasswordWidget': (context) =>
-            Generated4_forgotpasswordWidget(),
-        '/Generated5_forgotpasswordWidget': (context) =>
-            Generated5_forgotpasswordWidget(),
-        '/Generated6_forgotpasswordWidget': (context) =>
-            Generated6_forgotpasswordWidget(),
-        '/Generated7_successwindowpasswordWidget': (context) =>
-            Generated7_successwindowpasswordWidget(),
+        '/Generated4_forgotpasswordWidget': (context) => Generated4_forgotpasswordWidget(),
+        '/Generated5_forgotpasswordWidget': (context) => Generated5_forgotpasswordWidget(),
+        '/Generated6_forgotpasswordWidget': (context) => Generated6_forgotpasswordWidget(),
+        '/Generated7_successwindowpasswordWidget': (context) => Generated7_successwindowpasswordWidget(),
         '/Generated8_createaccountWidget': (context) => RegistrationScreen(),
-        '/Generated9_createaccountWidget': (context) =>
-            Generated9_createaccountWidget(),
-        '/Generated10_createaccountWidget': (context) =>
-            Generated10_createaccountWidget(),
-        '/Generated11_createaccountWidget': (context) =>
-            Generated11_createaccountWidget(),
+        '/Generated9_createaccountWidget': (context) => Generated9_createaccountWidget(),
+        '/Generated10_createaccountWidget': (context) => Generated10_createaccountWidget(),
+        '/Generated11_createaccountWidget': (context) => Generated11_createaccountWidget(),
         '/Generated12_createaccountWidget': (context) => HomeScreen(),
-        '/Generated13_childprofileWidget': (context) =>
-            Generated13_childprofileWidget(),
-        '/Generated14_childprofileWidget': (context) =>
-            Generated14_childprofileWidget(),
-        '/Generated15_childprofileWidget': (context) =>
-            Generated15_childprofileWidget(),
-        '/Generated16_childprofileWidget': (context) =>
-            Generated16_childprofileWidget(),
-        '/Generated17_childprofileWidget': (context) =>
-            Generated17_childprofileWidget(),
-        '/Generated18_findsportsWidget': (context) =>
-            Generated18_findsportsWidget(),
-        '/Generated19_findsportsWidget': (context) =>
-            Generated19_findsportsWidget(),
-        '/Generated20_findsportsWidget': (context) =>
-            Generated20_findsportsWidget(),
-        '/Generated21_findsportsWidget': (context) =>
-            Generated21_findsportsWidget(),
-        '/Generated22_findsportsWidget': (context) =>
-            Generated22_findsportsWidget(),
-        '/Generated23_findsportsWidget': (context) =>
-            Generated23_findsportsWidget(),
-        '/Generated24_findsportsWidget': (context) =>
-            Generated24_findsportsWidget(),
-        '/Generated25_REQUESTSENDWidget': (context) =>
-            Generated25_REQUESTSENDWidget(),
-        '/Generated26_MainmenuWidget': (context) =>
-            Generated26_MainmenuWidget(),
-        '/Generated27_MainmenuWidget': (context) =>
-            Generated27_MainmenuWidget(),
+        '/Generated13_childprofileWidget': (context) => Generated13_childprofileWidget(),
+        '/Generated14_childprofileWidget': (context) => Generated14_childprofileWidget(),
+        '/Generated15_childprofileWidget': (context) => Generated15_childprofileWidget(),
+        '/Generated16_childprofileWidget': (context) => Generated16_childprofileWidget(),
+        '/Generated17_childprofileWidget': (context) => Generated17_childprofileWidget(),
+        '/Generated18_findsportsWidget': (context) => Generated18_findsportsWidget(),
+        '/Generated19_findsportsWidget': (context) => Generated19_findsportsWidget(),
+        '/Generated20_findsportsWidget': (context) => Generated20_findsportsWidget(),
+        '/Generated21_findsportsWidget': (context) => Generated21_findsportsWidget(),
+        '/Generated22_findsportsWidget': (context) => Generated22_findsportsWidget(),
+        '/Generated23_findsportsWidget': (context) => Generated23_findsportsWidget(),
+        '/Generated24_findsportsWidget': (context) => Generated24_findsportsWidget(),
+        '/Generated25_REQUESTSENDWidget': (context) => Generated25_REQUESTSENDWidget(),
+        '/Generated26_MainmenuWidget': (context) => Generated26_MainmenuWidget(),
+        '/Generated27_MainmenuWidget': (context) => Generated27_MainmenuWidget(),
         '/Generated275reviewWidget': (context) => Generated275reviewWidget(),
         '/Generated28_TrainerWidget': (context) => Generated28_TrainerWidget(),
         '/Generated29_TrainerWidget': (context) => Generated29_TrainerWidget(),
@@ -119,14 +91,10 @@ class mvpupdatedApp extends StatelessWidget {
         '/Generated32_TrainerWidget': (context) => Generated32_TrainerWidget(),
         '/Generated33_TrainerWidget': (context) => Generated33_TrainerWidget(),
         '/Generated34_TrainerWidget': (context) => Generated34_TrainerWidget(),
-        '/Generated35_REQUESTSWidget': (context) =>
-            Generated35_REQUESTSWidget(),
-        '/Generated36_REQUESTSWidget': (context) =>
-            Generated36_REQUESTSWidget(),
-        '/Generated37_childrenlistWidget': (context) =>
-            Generated37_childrenlistWidget(),
-        '/Generated38_REQUESTSWidget': (context) =>
-            Generated38_REQUESTSWidget(),
+        '/Generated35_REQUESTSWidget': (context) => Generated35_REQUESTSWidget(),
+        '/Generated36_REQUESTSWidget': (context) => Generated36_REQUESTSWidget(),
+        '/Generated37_childrenlistWidget': (context) => Generated37_childrenlistWidget(),
+        '/Generated38_REQUESTSWidget': (context) => Generated38_REQUESTSWidget(),
       },
     );
   }
