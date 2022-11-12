@@ -1,8 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/helpers/transform/transform.dart';
 import 'package:flutterapp/mvpupdatedapp/generated3_signinwidget/generated/GeneratedBackWidget.dart';
 import 'package:flutterapp/mvpupdatedapp/generated3_signinwidget/generated/GeneratedForgotpasswordWidget.dart';
 import 'package:flutterapp/mvpupdatedapp/generated3_signinwidget/generated/GeneratedSignInWidget.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import '../generated12_createaccountwidget/Generated12_createaccountWidget.dart';
 
 // log in screen
 class LoginScreen extends StatefulWidget {
@@ -20,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController passwordController = new TextEditingController();
 
   // firebase
-  // final _auth = FirebaseAuth.instance;
+  final _auth = FirebaseAuth.instance;
 
   // string for displaying the error Message
   String? errorMessage;
@@ -90,8 +93,10 @@ class _LoginScreenState extends State<LoginScreen> {
       child: MaterialButton(
           padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
           minWidth: MediaQuery.of(context).size.width,
-          // onPressed: () { signIn(emailController.text, passwordController.text); },
-          onPressed: () => Navigator.pushNamed(context, '/Generated12_createaccountWidget'),
+          onPressed: () {
+            signIn(emailController.text, passwordController.text);
+          },
+          // onPressed: () => Navigator.pushNamed(context, '/Generated12_createaccountWidget'),
           child: Text(
             "Login",
             textAlign: TextAlign.center,
@@ -131,15 +136,15 @@ class _LoginScreenState extends State<LoginScreen> {
             child: TransformHelper.translate(x: -116.00, y: 0.00, z: 0, child: GeneratedSignInWidget()),
           ),
           // forgot password
-          Positioned(
-            left: null,
-            top: 700.0,
-            right: null,
-            bottom: null,
-            width: 104.0,
-            height: 16.0,
-            child: GeneratedForgotpasswordWidget(),
-          ),
+          // Positioned(
+          //   left: null,
+          //   top: 700.0,
+          //   right: null,
+          //   bottom: null,
+          //   width: 104.0,
+          //   height: 16.0,
+          //   child: GeneratedForgotpasswordWidget(),
+          // ),
           // email password login position
           Positioned(
             left: null,
@@ -176,47 +181,40 @@ class _LoginScreenState extends State<LoginScreen> {
     ));
   }
 
-  // Need to add Unique ID randomizer per user for a future usage with MySQL
-  // login function
-
-  // void signIn(String email, String password) async {
-  //   if (_formKey.currentState!.validate()) {
-  //     try {
-  //       await _auth
-  //           .signInWithEmailAndPassword(email: email, password: password)
-  //           .then((uid) => {
-  //                 Fluttertoast.showToast(msg: "Login Successful"),
-  //                 Navigator.of(context).pushReplacement(
-  //                     MaterialPageRoute(builder: (context) => HomeScreen())),
-  //               });
-  //     } on FirebaseAuthException catch (error) {
-  //       switch (error.code) {
-  //         case "invalid-email":
-  //           errorMessage = "Your email address appears to be malformed.";
-
-  //           break;
-  //         case "wrong-password":
-  //           errorMessage = "Your password is wrong.";
-  //           break;
-  //         case "user-not-found":
-  //           errorMessage = "User with this email doesn't exist.";
-  //           break;
-  //         case "user-disabled":
-  //           errorMessage = "User with this email has been disabled.";
-  //           break;
-  //         case "too-many-requests":
-  //           errorMessage = "Too many requests";
-  //           break;
-  //         case "operation-not-allowed":
-  //           errorMessage = "Signing in with Email and Password is not enabled.";
-  //           break;
-  //         default:
-  //           errorMessage = "An undefined Error happened.";
-  //       }
-  //       Fluttertoast.showToast(msg: errorMessage!);
-  //       print(error.code);
-  //     }
-  //   }
-  // }
-
+  // login function + Need to add Unique ID randomizer per user for a future usage with MySQL
+  void signIn(String email, String password) async {
+    if (_formKey.currentState!.validate()) {
+      try {
+        await _auth.signInWithEmailAndPassword(email: email, password: password).then((uid) => {
+              Fluttertoast.showToast(msg: "Login Successful"),
+              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen())),
+            });
+      } on FirebaseAuthException catch (error) {
+        switch (error.code) {
+          case "invalid-email":
+            errorMessage = "Your email address appears to be malformed.";
+            break;
+          case "wrong-password":
+            errorMessage = "Your password is wrong.";
+            break;
+          case "user-not-found":
+            errorMessage = "User with this email doesn't exist.";
+            break;
+          case "user-disabled":
+            errorMessage = "User with this email has been disabled.";
+            break;
+          case "too-many-requests":
+            errorMessage = "Too many requests";
+            break;
+          case "operation-not-allowed":
+            errorMessage = "Signing in with Email and Password is not enabled.";
+            break;
+          default:
+            errorMessage = "An undefined Error happened.";
+        }
+        Fluttertoast.showToast(msg: errorMessage!);
+        print(error.code);
+      }
+    }
+  }
 }

@@ -6,10 +6,14 @@ publish_to: "none"
 version: "1.0.0+1"
 
 dependencies:
-  cupertino_icons: "^1.0.5"
-  path_drawing: "^1.0.0"
+  cloud_firestore: ^4.0.5
+  cupertino_icons: ^1.0.5
+  firebase_auth: ^4.1.2
+  firebase_core: ^2.2.0
   flutter:
-    sdk: "flutter"
+    sdk: flutter
+  fluttertoast: ^8.1.1
+  path_drawing: ^1.0.0
 
 dev_dependencies:
   flutter_test:

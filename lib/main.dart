@@ -38,9 +38,15 @@ import 'package:flutterapp/mvpupdatedapp/generated35_requestswidget/Generated35_
 import 'package:flutterapp/mvpupdatedapp/generated36_requestswidget/Generated36_REQUESTSWidget.dart';
 import 'package:flutterapp/mvpupdatedapp/generated37_childrenlistwidget/Generated37_childrenlistWidget.dart';
 import 'package:flutterapp/mvpupdatedapp/generated38_requestswidget/Generated38_REQUESTSWidget.dart';
-// import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+// void main() {
+//   runApp(mvpupdatedApp());
+// }
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(mvpupdatedApp());
 }
 

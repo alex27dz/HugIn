@@ -16,10 +16,6 @@
         "source": "/Users/alexdezho/Documents/HugIn/FrontEnd/mvp_version1.0/android/app/src/main/res/drawable-v21/launch_background.xml"
     },
     {
-        "merged": "/Users/alexdezho/Documents/HugIn/FrontEnd/mvp_version1.0/build/app/intermediates/res/merged/debug/drawable_launch_background.xml.flat",
-        "source": "/Users/alexdezho/Documents/HugIn/FrontEnd/mvp_version1.0/android/app/src/main/res/drawable/launch_background.xml"
-    },
-    {
         "merged": "/Users/alexdezho/Documents/HugIn/FrontEnd/mvp_version1.0/build/app/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
         "source": "/Users/alexdezho/Documents/HugIn/FrontEnd/mvp_version1.0/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     },

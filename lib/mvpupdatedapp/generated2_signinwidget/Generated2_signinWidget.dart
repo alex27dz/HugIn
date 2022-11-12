@@ -35,7 +35,7 @@ class Generated2_signinWidget extends StatelessWidget {
           //   height: 54.0,
           //   child: GeneratedComponent3Widget(),
           // ),
-          /* Google */
+          /* Login */
           Positioned(
             left: null,
             top: 710,
