@@ -676,6 +676,10 @@
 		<data>
 		XqMugqo0+S9exxvLSlOEWWZbW+g=
 		</data>
+		<key>GoogleService-Info.plist</key>
+		<data>
+		uUGLZGc+Xv/OC3hYSPtCdSu2Xfk=
+		</data>
 		<key>Info.plist</key>
 		<data>
 		E5TVLxviXBly4/kMWqNIkOzAPII=
@@ -1861,6 +1865,13 @@
 			<key>hash2</key>
 			<data>
 			ZtzN3Ow5T1i/hQ4FMMze68AhHIqvgP3AFwa3ocJhLjY=
+			</data>
+		</dict>
+		<key>GoogleService-Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ByQBjYp+fg2QMjhwoG6RoBCdeZ1hKWBwoPmsX7GCg2M=
 			</data>
 		</dict>
 	</dict>
