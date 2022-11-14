@@ -40,14 +40,14 @@ import 'package:flutterapp/mvpupdatedapp/generated37_childrenlistwidget/Generate
 import 'package:flutterapp/mvpupdatedapp/generated38_requestswidget/Generated38_REQUESTSWidget.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-// void main() {
-//   runApp(mvpupdatedApp());
-// }
+// Firebase initialization before the app run
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-
   runApp(mvpupdatedApp());
+  // void main() {
+  // runApp(mvpupdatedApp());
+  // }
 }
 
 class mvpupdatedApp extends StatelessWidget {
