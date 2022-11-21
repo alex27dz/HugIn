@@ -7,6 +7,44 @@ import 'package:flutterapp/mvpupdatedapp/generated8_createaccountwidget/generate
 import 'package:flutterapp/mvpupdatedapp/generated8_createaccountwidget/generated/CreateAccount.dart';
 import 'package:flutterapp/mvpupdatedapp/generated8_createaccountwidget/generated/GeneratedComponent60Widget.dart';
 import 'package:flutterapp/mvpupdatedapp/generated8_createaccountwidget/generated/GeneratedComponent60Widget1.dart';
+import '../generated12_createaccountwidget/Generated12_createaccountWidget.dart';
+import '../generated2_signinwidget/Generated2_signinWidget.dart';
+import '../generated3_signinwidget/generated/GeneratedSignInWidget.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
+// Registration page
+
+// user model class for creating a user
+class UserModel {
+  String? uid;
+  String? email;
+  String? firstName;
+  String? secondName;
+
+  UserModel({this.uid, this.email, this.firstName, this.secondName});
+
+  // receiving data from server with user details
+  factory UserModel.fromMap(map) {
+    return UserModel(
+      uid: map['uid'],
+      email: map['email'],
+      firstName: map['firstName'],
+      secondName: map['secondName'],
+    );
+  }
+
+  // sending user data to the server
+  Map<String, dynamic> toMap() {
+    return {
+      'uid': uid,
+      'email': email,
+      'firstName': firstName,
+      'secondName': secondName,
+    };
+  }
+}
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({Key? key}) : super(key: key);
@@ -16,7 +54,7 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
-  //final _auth = FirebaseAuth.instance;
+  final _auth = FirebaseAuth.instance;
 
   // string for displaying the error Message
   String? errorMessage;
@@ -94,8 +132,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             return ("Please Enter Your Email");
           }
           // reg expression for email validation
-          if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
-              .hasMatch(value)) {
+          if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)) {
             return ("Please Enter a valid email");
           }
           return null;
@@ -146,8 +183,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         controller: confirmPasswordEditingController,
         obscureText: true,
         validator: (value) {
-          if (confirmPasswordEditingController.text !=
-              passwordEditingController.text) {
+          if (confirmPasswordEditingController.text != passwordEditingController.text) {
             return "Password don't match";
           }
           return null;
@@ -173,14 +209,14 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       child: MaterialButton(
           padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
           minWidth: MediaQuery.of(context).size.width,
-          onPressed: () =>
-              Navigator.pushNamed(context, '/Generated12_createaccountWidget'),
-          //signUp(emailEditingController.text, passwordEditingController.text);
+          onPressed: () {
+            signUp(emailEditingController.text, passwordEditingController.text);
+            // => Navigator.pushNamed(context, '/Generated12_createaccountWidget'),
+          },
           child: Text(
             "SignUp",
             textAlign: TextAlign.center,
-            style: TextStyle(
-                fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
           )),
     );
 
@@ -190,75 +226,128 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           child: Container(
               width: 390.0,
               height: 844.0,
-              child: Stack(
-                  clipBehavior: Clip.none,
-                  fit: StackFit.expand,
-                  alignment: Alignment.center,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.zero,
-                      child: Container(
-                        color: Color.fromARGB(255, 255, 255, 255),
-                      ),
-                    ),
-                    Positioned(
-                      left: null,
-                      top: 100.0,
-                      right: null,
-                      bottom: null,
-                      width: 292.0,
-                      height: 41.0,
-                      child: TransformHelper.translate(
-                          x: -17.00,
-                          y: 0.00,
-                          z: 0,
-                          child: GeneratedCreateanaccountWidget()),
-                    ),
-                    Positioned(
-                      left: 0.0,
-                      top: 51.0,
-                      right: 0.0,
-                      bottom: null,
-                      width: null,
-                      height: 42.0,
-                      child: GeneratedTitleWidget(),
-                    ),
-                    Positioned(
-                        left: 28.0,
-                        top: 140.0,
-                        right: null,
-                        bottom: null,
-                        width: 340.0,
-                        height: 600.0,
-                        child: Container(
-                          color: Colors.white,
-                          child: Padding(
-                            padding: const EdgeInsets.all(36.0),
-                            child: Form(
-                              key: _formKey,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: <Widget>[
-                                  SizedBox(height: 45),
-                                  firstNameField,
-                                  SizedBox(height: 20),
-                                  secondNameField,
-                                  SizedBox(height: 20),
-                                  emailField,
-                                  SizedBox(height: 20),
-                                  passwordField,
-                                  SizedBox(height: 20),
-                                  confirmPasswordField,
-                                  SizedBox(height: 20),
-                                  signUpButton,
-                                  SizedBox(height: 15),
-                                ],
-                              ),
-                            ),
+              child: Stack(clipBehavior: Clip.none, fit: StackFit.expand, alignment: Alignment.center, children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.zero,
+                  child: Container(
+                    color: Color.fromARGB(255, 255, 255, 255),
+                  ),
+                ),
+                // register hug in title
+                Positioned(
+                  left: null,
+                  top: 130.0,
+                  right: 10.0,
+                  bottom: null,
+                  width: 200.0,
+                  height: 41.0,
+                  child: TransformHelper.translate(x: -116.00, y: 0.00, z: 0, child: GeneratedSignInWidget()),
+                ),
+                // back button
+                Positioned(
+                  left: null,
+                  top: 70.0,
+                  right: 0.0,
+                  bottom: null,
+                  width: null,
+                  height: 42.0,
+                  child: GeneratedTitleWidget(),
+                ),
+                // input boxes
+                Positioned(
+                    left: null,
+                    top: 200.0,
+                    right: null,
+                    bottom: null,
+                    width: 340.0,
+                    height: 600.0,
+                    child: Container(
+                      color: Colors.white,
+                      child: Padding(
+                        padding: const EdgeInsets.all(36.0),
+                        child: Form(
+                          key: _formKey,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              SizedBox(height: 45),
+                              firstNameField,
+                              SizedBox(height: 20),
+                              secondNameField,
+                              SizedBox(height: 20),
+                              emailField,
+                              SizedBox(height: 20),
+                              passwordField,
+                              SizedBox(height: 20),
+                              confirmPasswordField,
+                              SizedBox(height: 20),
+                              signUpButton,
+                              SizedBox(height: 15),
+                            ],
                           ),
-                        )),
-                  ]))),
+                        ),
+                      ),
+                    )),
+              ]))),
     );
+  }
+
+  // sign up function creating user in firebase authentication
+  void signUp(String email, String password) async {
+    if (_formKey.currentState!.validate()) {
+      try {
+        await _auth.createUserWithEmailAndPassword(email: email, password: password).then((value) => {postDetailsToFirestore()}).catchError((e) {
+          Fluttertoast.showToast(msg: e!.message);
+        });
+      } on FirebaseAuthException catch (error) {
+        switch (error.code) {
+          case "invalid-email":
+            errorMessage = "Your email address appears to be malformed.";
+            break;
+          case "wrong-password":
+            errorMessage = "Your password is wrong.";
+            break;
+          case "user-not-found":
+            errorMessage = "User with this email doesn't exist.";
+            break;
+          case "user-disabled":
+            errorMessage = "User with this email has been disabled.";
+            break;
+          case "too-many-requests":
+            errorMessage = "Too many requests";
+            break;
+          case "operation-not-allowed":
+            errorMessage = "Signing in with Email and Password is not enabled.";
+            break;
+          default:
+            errorMessage = "An undefined Error happened.";
+        }
+        Fluttertoast.showToast(msg: errorMessage!);
+        print(error.code);
+      }
+    }
+  }
+
+  // posting details to Database async function
+  postDetailsToFirestore() async {
+    // calling our firestore
+    // calling our user model
+    // sedning these values
+
+    FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
+    User? user = _auth.currentUser;
+
+    UserModel userModel = UserModel();
+
+    // writing all the values to DB
+    userModel.email = user!.email;
+    userModel.uid = user.uid;
+    userModel.firstName = firstNameEditingController.text;
+    userModel.secondName = secondNameEditingController.text;
+
+    await firebaseFirestore.collection("users").doc(user.uid).set(userModel.toMap());
+    Fluttertoast.showToast(msg: "Account created successfully :) ");
+    Navigator.pushAndRemoveUntil((context), MaterialPageRoute(builder: (context) => Generated2_signinWidget()), (route) => false);
   }
 }

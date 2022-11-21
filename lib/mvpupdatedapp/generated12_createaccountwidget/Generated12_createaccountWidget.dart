@@ -6,6 +6,7 @@ import 'package:flutterapp/mvpupdatedapp/generated12_createaccountwidget/generat
 import 'package:flutterapp/mvpupdatedapp/generated12_createaccountwidget/generated/GeneratedComponent4Widget15.dart';
 import 'package:flutterapp/mvpupdatedapp/generated12_createaccountwidget/generated/GeneratedNowyoucanaddaprofileforyourchildortellmoreaboutyourself.dart';
 
+// login screen - home screen
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 

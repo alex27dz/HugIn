@@ -135,16 +135,6 @@ class _LoginScreenState extends State<LoginScreen> {
             height: 41.0,
             child: TransformHelper.translate(x: -116.00, y: 0.00, z: 0, child: GeneratedSignInWidget()),
           ),
-          // forgot password
-          // Positioned(
-          //   left: null,
-          //   top: 700.0,
-          //   right: null,
-          //   bottom: null,
-          //   width: 104.0,
-          //   height: 16.0,
-          //   child: GeneratedForgotpasswordWidget(),
-          // ),
           // email password login position
           Positioned(
             left: null,

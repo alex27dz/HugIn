@@ -7,7 +7,7 @@ class GeneratedSignInWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      '''HugIn''',
+      '''    HUGIN''',
       overflow: TextOverflow.visible,
       textAlign: TextAlign.center,
       style: TextStyle(

@@ -25,16 +25,6 @@ class Generated2_signinWidget extends StatelessWidget {
               color: Color.fromARGB(255, 255, 255, 255),
             ),
           ),
-          /* Log in */
-          // Positioned(
-          //   left: null,
-          //   top: 650,
-          //   right: null,
-          //   bottom: null,
-          //   width: 327.0,
-          //   height: 54.0,
-          //   child: GeneratedComponent3Widget(),
-          // ),
           /* Login */
           Positioned(
             left: null,
