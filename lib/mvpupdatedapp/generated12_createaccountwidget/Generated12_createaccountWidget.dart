@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/helpers/transform/transform.dart';
 import 'package:flutterapp/mvpupdatedapp/generated12_createaccountwidget/generated/GeneratedAccountsuccessfullyregisteredWidget1.dart';
@@ -5,6 +7,8 @@ import 'package:flutterapp/mvpupdatedapp/generated12_createaccountwidget/generat
 import 'package:flutterapp/mvpupdatedapp/generated12_createaccountwidget/generated/GeneratedComponent3Widget2.dart';
 import 'package:flutterapp/mvpupdatedapp/generated12_createaccountwidget/generated/GeneratedComponent4Widget15.dart';
 import 'package:flutterapp/mvpupdatedapp/generated12_createaccountwidget/generated/GeneratedNowyoucanaddaprofileforyourchildortellmoreaboutyourself.dart';
+import '../generated3_signinwidget/Generated3_signinWidget.dart';
+import '../generated8_createaccountwidget/Generated8_createaccountWidget.dart';
 
 // login screen - home screen
 class HomeScreen extends StatefulWidget {
@@ -15,21 +19,17 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  // User? user = FirebaseAuth.instance.currentUser;
-  // UserModel loggedInUser = UserModel();
+  User? user = FirebaseAuth.instance.currentUser;
+  UserModel loggedInUser = UserModel();
 
-//   @override
-//   void initState() {
-//     super.initState();
-//     FirebaseFirestore.instance
-//         .collection("users")
-//         .doc(user!.uid)
-//         .get()
-//         .then((value) {
-//       this.loggedInUser = UserModel.fromMap(value.data());
-//       setState(() {});
-//     });
-//   }
+  @override
+  void initState() {
+    super.initState();
+    FirebaseFirestore.instance.collection("users").doc(user!.uid).get().then((value) {
+      this.loggedInUser = UserModel.fromMap(value.data());
+      setState(() {});
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -77,41 +77,30 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
+              // showing username and email in text section
               children: <Widget>[
                 SizedBox(
                   height: 10,
                 ),
-                // Text("${loggedInUser.firstName} ${loggedInUser.secondName}",
-                //     style: TextStyle(
-                //       color: Colors.black54,
-                //       fontWeight: FontWeight.w500,
-                //     )),
-                Text("Alex Dezho",
+                // first and second name
+                Text("${loggedInUser.firstName} ${loggedInUser.secondName}",
                     style: TextStyle(
                       color: Colors.black54,
-                      fontSize: 19.0,
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w500,
                     )),
-
-                // Text("${loggedInUser.email}",
-                //     style: TextStyle(
-                //       color: Colors.black54,
-                //       fontWeight: FontWeight.w500,
-                //     )),
-                Text("alex27dz@gmail.com",
+                Text("${loggedInUser.email}",
                     style: TextStyle(
                       color: Colors.black54,
-                      fontSize: 19.0,
-                      fontWeight: FontWeight.w900,
+                      fontWeight: FontWeight.w500,
                     )),
                 SizedBox(
-                  height: 20,
+                  height: 15,
                 ),
-                // log out button
                 ActionChip(
-                  label: Text("Log out"),
-                  onPressed: () => Navigator.pushNamed(context, '/Generated1_wlcomepageWidget'),
-                ),
+                    label: Text("Logout"),
+                    onPressed: () {
+                      logout(context);
+                    }),
               ],
             ),
           ),
@@ -151,5 +140,11 @@ class _HomeScreenState extends State<HomeScreen> {
         ]),
       ),
     ));
+  }
+
+  // the logout function
+  Future<void> logout(BuildContext context) async {
+    await FirebaseAuth.instance.signOut();
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoginScreen()));
   }
 }

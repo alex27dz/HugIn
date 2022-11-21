@@ -62,17 +62,22 @@ class mvpupdatedApp extends StatelessWidget {
       initialRoute: '/Generated1_wlcomepageWidget',
       // In flutter, the pages or screens are called Routes. Routes are referred to as Widgets. Creating routes: A route can be written in the form of a “Class” in Dart using object-oriented concepts. Each route can be written as a separate class and has its own contents and UI.
       routes: {
+        // Hugin page
         '/Generated1_wlcomepageWidget': (context) => Generated1_wlcomepageWidget(),
+        // welcome login or register page
         '/Generated2_signinWidget': (context) => Generated2_signinWidget(),
+        // login page
         '/Generated3_signinWidget': (context) => LoginScreen(),
         '/Generated4_forgotpasswordWidget': (context) => Generated4_forgotpasswordWidget(),
         '/Generated5_forgotpasswordWidget': (context) => Generated5_forgotpasswordWidget(),
         '/Generated6_forgotpasswordWidget': (context) => Generated6_forgotpasswordWidget(),
         '/Generated7_successwindowpasswordWidget': (context) => Generated7_successwindowpasswordWidget(),
+        // Registration page
         '/Generated8_createaccountWidget': (context) => RegistrationScreen(),
         '/Generated9_createaccountWidget': (context) => Generated9_createaccountWidget(),
         '/Generated10_createaccountWidget': (context) => Generated10_createaccountWidget(),
         '/Generated11_createaccountWidget': (context) => Generated11_createaccountWidget(),
+        // Home screen welcome  page
         '/Generated12_createaccountWidget': (context) => HomeScreen(),
         '/Generated13_childprofileWidget': (context) => Generated13_childprofileWidget(),
         '/Generated14_childprofileWidget': (context) => Generated14_childprofileWidget(),
