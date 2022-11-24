@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterapp/mvpupdatedapp/generated12_createaccountwidget/generated/GeneratedLabelWidget13.dart';
 import 'package:flutterapp/helpers/transform/transform.dart';
 
-// trainer menu button
+// child menu button
 class GeneratedComponent4Widget15 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

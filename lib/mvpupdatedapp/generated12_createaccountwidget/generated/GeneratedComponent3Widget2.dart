@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutterapp/helpers/transform/transform.dart';
 import 'package:flutterapp/mvpupdatedapp/generated12_createaccountwidget/generated/GeneratedLabelWidget12.dart';
 
-// child menu button
+// Trainer menu button
 class GeneratedComponent3Widget2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, '/Generated13_childprofileWidget'),
+      onTap: () => Navigator.pushNamed(context, '/Generated40_trainermenuWidget'),
       child: Container(
         width: 327.0,
         height: 54.0,

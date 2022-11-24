@@ -33,6 +33,11 @@ import 'package:flutterapp/mvpupdatedapp/generated37_childrenlistwidget/Generate
 import 'package:flutterapp/mvpupdatedapp/generated38_requestswidget/Generated38_REQUESTSWidget.dart';
 import 'package:firebase_core/firebase_core.dart';
 
+import 'mvpupdatedapp/generated40_trainermenuwidget/Generated40_trainermenuWidget.dart';
+import 'mvpupdatedapp/generated41_addnewsportwidget/Generated41_addnewsportWidget.dart';
+import 'mvpupdatedapp/generated42_sportcreatedwidget/Generated42_sportcreatedWidget.dart';
+import 'mvpupdatedapp/generated43_sportswidget/Generated43_sportsWidget.dart';
+
 // Firebase initialization before the app run
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -63,7 +68,7 @@ class mvpupdatedApp extends StatelessWidget {
         '/Generated3_signinWidget': (context) => LoginScreen(), // login page
         '/Generated8_createaccountWidget': (context) => RegistrationScreen(), // Registration page
         '/Generated12_createaccountWidget': (context) => HomeScreen(), // Home screen page
-        // Trainer menu page
+        '/Generated40_trainermenuWidget': (context) => Generated40_trainermenuWidget(), // Trainer menu page
         // Trainer add ports page
         // Trainer sports management page (delete sport)
         // Parent menu page
@@ -97,6 +102,10 @@ class mvpupdatedApp extends StatelessWidget {
         '/Generated36_REQUESTSWidget': (context) => Generated36_REQUESTSWidget(),
         '/Generated37_childrenlistWidget': (context) => Generated37_childrenlistWidget(),
         '/Generated38_REQUESTSWidget': (context) => Generated38_REQUESTSWidget(),
+        // Redesigned pages/routes
+        '/Generated41_addnewsportWidget': (context) => Generated41_addnewsportWidget(),
+        '/Generated42_sportcreatedWidget': (context) => Generated42_sportcreatedWidget(),
+        '/Generated43_sportsWidget': (context) => Generated43_sportsWidget(),
       },
     );
   }
