@@ -2,14 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterapp/mvpupdatedapp/generated1_wlcomepagewidget/Generated1_wlcomepageWidget.dart';
 import 'package:flutterapp/mvpupdatedapp/generated2_signinwidget/Generated2_signinWidget.dart';
 import 'package:flutterapp/mvpupdatedapp/generated3_signinwidget/Generated3_signinWidget.dart';
-import 'package:flutterapp/mvpupdatedapp/generated4_forgotpasswordwidget/Generated4_forgotpasswordWidget.dart';
-import 'package:flutterapp/mvpupdatedapp/generated5_forgotpasswordwidget/Generated5_forgotpasswordWidget.dart';
-import 'package:flutterapp/mvpupdatedapp/generated6_forgotpasswordwidget/Generated6_forgotpasswordWidget.dart';
-import 'package:flutterapp/mvpupdatedapp/generated7_successwindowpasswordwidget/Generated7_successwindowpasswordWidget.dart';
 import 'package:flutterapp/mvpupdatedapp/generated8_createaccountwidget/Generated8_createaccountWidget.dart';
-import 'package:flutterapp/mvpupdatedapp/generated9_createaccountwidget/Generated9_createaccountWidget.dart';
-import 'package:flutterapp/mvpupdatedapp/generated10_createaccountwidget/Generated10_createaccountWidget.dart';
-import 'package:flutterapp/mvpupdatedapp/generated11_createaccountwidget/Generated11_createaccountWidget.dart';
 import 'package:flutterapp/mvpupdatedapp/generated12_createaccountwidget/Generated12_createaccountWidget.dart';
 import 'package:flutterapp/mvpupdatedapp/generated13_childprofilewidget/Generated13_childprofileWidget.dart';
 import 'package:flutterapp/mvpupdatedapp/generated14_childprofilewidget/Generated14_childprofileWidget.dart';
@@ -58,27 +51,25 @@ class mvpupdatedApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // Strating with first window of the flow
-      initialRoute: '/Generated1_wlcomepageWidget',
-      // In flutter, the pages or screens are called Routes. Routes are referred to as Widgets. Creating routes: A route can be written in the form of a “Class” in Dart using object-oriented concepts. Each route can be written as a separate class and has its own contents and UI.
+      initialRoute: '/Generated1_wlcomepageWidget', // Starting point of the application - first route/page
+
+      // In flutter, the pages are called Routes.
+      // Routes/pages are referred to as Widgets.
+      // Creating routes/pages: A route/page can be written in the form of a “Class” in Dart using object-oriented concepts.
+      // Each route/page can be written as a separate class and has its own contents and UI.
       routes: {
-        // Hugin page
-        '/Generated1_wlcomepageWidget': (context) => Generated1_wlcomepageWidget(),
-        // welcome login or register page
-        '/Generated2_signinWidget': (context) => Generated2_signinWidget(),
-        // login page
-        '/Generated3_signinWidget': (context) => LoginScreen(),
-        '/Generated4_forgotpasswordWidget': (context) => Generated4_forgotpasswordWidget(),
-        '/Generated5_forgotpasswordWidget': (context) => Generated5_forgotpasswordWidget(),
-        '/Generated6_forgotpasswordWidget': (context) => Generated6_forgotpasswordWidget(),
-        '/Generated7_successwindowpasswordWidget': (context) => Generated7_successwindowpasswordWidget(),
-        // Registration page
-        '/Generated8_createaccountWidget': (context) => RegistrationScreen(),
-        '/Generated9_createaccountWidget': (context) => Generated9_createaccountWidget(),
-        '/Generated10_createaccountWidget': (context) => Generated10_createaccountWidget(),
-        '/Generated11_createaccountWidget': (context) => Generated11_createaccountWidget(),
-        // Home screen welcome  page
-        '/Generated12_createaccountWidget': (context) => HomeScreen(),
+        '/Generated1_wlcomepageWidget': (context) => Generated1_wlcomepageWidget(), // Welcome page
+        '/Generated2_signinWidget': (context) => Generated2_signinWidget(), // Second welcome, login and register page
+        '/Generated3_signinWidget': (context) => LoginScreen(), // login page
+        '/Generated8_createaccountWidget': (context) => RegistrationScreen(), // Registration page
+        '/Generated12_createaccountWidget': (context) => HomeScreen(), // Home screen page
+        // Trainer menu page
+        // Trainer add ports page
+        // Trainer sports management page (delete sport)
+        // Parent menu page
+        // Parent add child page
+        // Parent children management page (delete child)
+        // forgot password page
         '/Generated13_childprofileWidget': (context) => Generated13_childprofileWidget(),
         '/Generated14_childprofileWidget': (context) => Generated14_childprofileWidget(),
         '/Generated15_childprofileWidget': (context) => Generated15_childprofileWidget(),

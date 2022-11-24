@@ -7,7 +7,7 @@ class GeneratedLabelWidget13 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      '''Trainer menu''',
+      '''Parent''',
       overflow: TextOverflow.visible,
       textAlign: TextAlign.center,
       style: TextStyle(
@@ -16,8 +16,6 @@ class GeneratedLabelWidget13 extends StatelessWidget {
         fontFamily: 'Inter',
         fontWeight: FontWeight.w400,
         color: Color.fromARGB(255, 255, 255, 255),
-
-        /* letterSpacing: 1.25, */
       ),
     );
   }

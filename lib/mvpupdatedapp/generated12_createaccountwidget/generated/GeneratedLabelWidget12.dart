@@ -7,7 +7,7 @@ class GeneratedLabelWidget12 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      '''Parent/child menu''',
+      '''Trainer''',
       overflow: TextOverflow.visible,
       textAlign: TextAlign.center,
       style: TextStyle(

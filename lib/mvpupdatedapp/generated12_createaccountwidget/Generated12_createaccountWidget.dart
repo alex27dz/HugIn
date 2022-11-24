@@ -46,20 +46,20 @@ class _HomeScreenState extends State<HomeScreen> {
               color: Color.fromARGB(255, 83, 219, 146),
             ),
           ),
-          // Child menu
+          // Trainer menu
           Positioned(
             left: null,
-            top: 800,
+            top: 600,
             right: null,
             bottom: null,
             width: 327.0,
             height: 54.0,
             child: GeneratedComponent3Widget2(),
           ),
-          // Trainer menu
+          // Child menu
           Positioned(
             left: null,
-            top: 730.0,
+            top: 670.0,
             right: null,
             bottom: null,
             width: 327.0,
