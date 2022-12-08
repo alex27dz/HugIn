@@ -229,6 +229,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               child: Stack(clipBehavior: Clip.none, fit: StackFit.expand, alignment: Alignment.center, children: [
                 ClipRRect(
                   borderRadius: BorderRadius.zero,
+// --> adding the scrolling <--
                   child: Container(
                     color: Color.fromARGB(255, 255, 255, 255),
                   ),

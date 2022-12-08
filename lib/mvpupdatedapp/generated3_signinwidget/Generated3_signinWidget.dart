@@ -103,71 +103,81 @@ class _LoginScreenState extends State<LoginScreen> {
             style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
           )),
     );
-
+    // scrolling the page
     return Material(
         child: ClipRRect(
       borderRadius: BorderRadius.zero,
-      child: Container(
-        width: 390.0,
-        height: 844.0,
-        child: Stack(clipBehavior: Clip.none, fit: StackFit.expand, alignment: Alignment.center, children: [
-          ClipRRect(
-            borderRadius: BorderRadius.zero,
+      child: LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
+        return SingleChildScrollView(
+            scrollDirection: Axis.vertical,
             child: Container(
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-          ),
-          Positioned(
-            left: 3.0,
-            top: 70.0,
-            right: null,
-            bottom: null,
-            width: 53.0,
-            height: 33.0,
-            child: GeneratedBackWidget(),
-          ),
-          Positioned(
-            left: null,
-            top: 180.0,
-            right: 10.0,
-            bottom: null,
-            width: 200.0,
-            height: 41.0,
-            child: TransformHelper.translate(x: -116.00, y: 0.00, z: 0, child: GeneratedSignInWidget()),
-          ),
-          // email password login position
-          Positioned(
-            left: null,
-            top: 250.0,
-            right: null,
-            bottom: null,
-            width: 327.0,
-            height: 400.0,
-            child: Container(
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(36.0),
-                child: Form(
-                  key: _formKey,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      SizedBox(height: 45),
-                      emailField,
-                      SizedBox(height: 25),
-                      passwordField,
-                      SizedBox(height: 35),
-                      loginButton,
-                      SizedBox(height: 15),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          )
-        ]),
-      ),
+                height: 1000.0,
+                child: Stack(children: [
+                  Container(
+                    width: constraints.maxWidth,
+                    child: Container(
+                        width: 390.0,
+                        height: 1000.0,
+                        child: Stack(clipBehavior: Clip.none, fit: StackFit.expand, alignment: Alignment.center, children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.zero,
+                            child: Container(
+                              color: Color.fromARGB(255, 255, 255, 255),
+                            ),
+                          ),
+                          Positioned(
+                            left: 3.0,
+                            top: 70.0,
+                            right: null,
+                            bottom: null,
+                            width: 53.0,
+                            height: 33.0,
+                            child: GeneratedBackWidget(),
+                          ),
+                          Positioned(
+                            left: null,
+                            top: 180.0,
+                            right: 10.0,
+                            bottom: null,
+                            width: 200.0,
+                            height: 41.0,
+                            child: TransformHelper.translate(x: -116.00, y: 0.00, z: 0, child: GeneratedSignInWidget()),
+                          ),
+                          // email password login position
+                          Positioned(
+                            left: null,
+                            top: 250.0,
+                            right: null,
+                            bottom: null,
+                            width: 327.0,
+                            height: 400.0,
+                            child: Container(
+                              color: Colors.white,
+                              child: Padding(
+                                padding: const EdgeInsets.all(36.0),
+                                child: Form(
+                                  key: _formKey,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: <Widget>[
+                                      SizedBox(height: 45),
+                                      emailField,
+                                      SizedBox(height: 25),
+                                      passwordField,
+                                      SizedBox(height: 35),
+                                      loginButton,
+                                      SizedBox(height: 15),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ])),
+                  )
+                ])));
+      }),
     ));
   }
 

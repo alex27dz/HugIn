@@ -49,17 +49,17 @@ class _HomeScreenState extends State<HomeScreen> {
           // Trainer menu
           Positioned(
             left: null,
-            top: 600,
+            top: 550,
             right: null,
             bottom: null,
             width: 327.0,
             height: 54.0,
             child: GeneratedComponent3Widget2(),
           ),
-          // Child menu
+          // Parent menu
           Positioned(
             left: null,
-            top: 670.0,
+            top: 630.0,
             right: null,
             bottom: null,
             width: 327.0,
@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
           // user information
           Positioned(
             left: null,
-            top: 280.0,
+            top: 200.0,
             right: null,
             bottom: null,
             width: 310.0,

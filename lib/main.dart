@@ -33,6 +33,7 @@ import 'package:flutterapp/mvpupdatedapp/generated37_childrenlistwidget/Generate
 import 'package:flutterapp/mvpupdatedapp/generated38_requestswidget/Generated38_REQUESTSWidget.dart';
 import 'package:firebase_core/firebase_core.dart';
 
+// added windows
 import 'mvpupdatedapp/generated40_trainermenuwidget/Generated40_trainermenuWidget.dart';
 import 'mvpupdatedapp/generated41_addnewsportwidget/Generated41_addnewsportWidget.dart';
 import 'mvpupdatedapp/generated42_sportcreatedwidget/Generated42_sportcreatedWidget.dart';
@@ -57,24 +58,24 @@ class mvpupdatedApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       initialRoute: '/Generated1_wlcomepageWidget', // Starting point of the application - first route/page
-
-      // In flutter, the pages are called Routes.
-      // Routes/pages are referred to as Widgets.
-      // Creating routes/pages: A route/page can be written in the form of a “Class” in Dart using object-oriented concepts.
-      // Each route/page can be written as a separate class and has its own contents and UI.
+      // pages mapping: In flutter, the pages are called Routes. Routes/pages are referred to as Widgets. Creating routes/pages: A route/page can be written in the form of a “Class” in Dart using object-oriented concepts. Each route/page can be written as a separate class and has its own contents and UI.
       routes: {
         '/Generated1_wlcomepageWidget': (context) => Generated1_wlcomepageWidget(), // Welcome page
-        '/Generated2_signinWidget': (context) => Generated2_signinWidget(), // Second welcome, login and register page
-        '/Generated3_signinWidget': (context) => LoginScreen(), // login page
+        '/Generated2_signinWidget': (context) => Generated2_signinWidget(), // Second welcome
+        '/Generated3_signinWidget': (context) => LoginScreen(), // Login page
         '/Generated8_createaccountWidget': (context) => RegistrationScreen(), // Registration page
-        '/Generated12_createaccountWidget': (context) => HomeScreen(), // Home screen page
-        '/Generated40_trainermenuWidget': (context) => Generated40_trainermenuWidget(), // Trainer menu page
-        // Trainer add ports page
-        // Trainer sports management page (delete sport)
-        // Parent menu page
-        // Parent add child page
-        // Parent children management page (delete child)
-        // forgot password page
+        '/Generated12_createaccountWidget': (context) => HomeScreen(), // Home screen - Logged in
+        '/Generated40_trainermenuWidget': (context) => Generated40_trainermenuWidget(), // Trainer - menu page
+        '/Generated41_addnewsportWidget': (context) => Generated41_addnewsportWidget(), // Trainer - Add new sports
+
+        '/Generated42_sportcreatedWidget': (context) => Generated42_sportcreatedWidget(),
+        '/Generated43_sportsWidget': (context) => Generated43_sportsWidget(),
+        // Trainer add sports page : (context) =>      (),
+        // Trainer sports management page (delete sport) (context) =>     (),
+        // Parent menu page (context) =>     (),
+        // Parent add child page (context) =>     (),
+        // Parent children management page (delete child) (context) =>     (),
+        // forgot password page (context) =>     (),
         '/Generated13_childprofileWidget': (context) => Generated13_childprofileWidget(),
         '/Generated14_childprofileWidget': (context) => Generated14_childprofileWidget(),
         '/Generated15_childprofileWidget': (context) => Generated15_childprofileWidget(),
@@ -102,10 +103,6 @@ class mvpupdatedApp extends StatelessWidget {
         '/Generated36_REQUESTSWidget': (context) => Generated36_REQUESTSWidget(),
         '/Generated37_childrenlistWidget': (context) => Generated37_childrenlistWidget(),
         '/Generated38_REQUESTSWidget': (context) => Generated38_REQUESTSWidget(),
-        // Redesigned pages/routes
-        '/Generated41_addnewsportWidget': (context) => Generated41_addnewsportWidget(),
-        '/Generated42_sportcreatedWidget': (context) => Generated42_sportcreatedWidget(),
-        '/Generated43_sportsWidget': (context) => Generated43_sportsWidget(),
       },
     );
   }
