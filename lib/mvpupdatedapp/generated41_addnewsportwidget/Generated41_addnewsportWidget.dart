@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/mvpupdatedapp/generated41_addnewsportwidget/generated/GeneratedComponent60Widget1.dart';
 import 'package:flutterapp/mvpupdatedapp/generated41_addnewsportwidget/generated/GeneratedComponent60Widget4.dart';
@@ -18,11 +20,63 @@ import 'package:flutterapp/mvpupdatedapp/generated41_addnewsportwidget/generated
 import 'package:flutterapp/mvpupdatedapp/generated41_addnewsportwidget/generated/GeneratedComponent61Widget.dart';
 import 'package:flutterapp/helpers/transform/transform.dart';
 import 'package:flutterapp/mvpupdatedapp/generated41_addnewsportwidget/generated/GeneratedComponent60Widget6.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
-// Add new sport page
+import '../generated2_signinwidget/Generated2_signinWidget.dart';
 
-// create new sport in firebase DB, using the registration page proccess (page 8)
-// need to create collection inside user
+// Add new sport page, create new sport in firebase DB, using the registration page proccess (page 8), need to create collection inside user
+
+// user model class for creating a user
+// class UserModel {
+//   String? uid;
+//   String? email;
+//   String? firstName;
+//   String? secondName;
+
+//   UserModel({this.uid, this.email, this.firstName, this.secondName});
+
+//   // receiving data from server with user details
+//   factory UserModel.fromMap(map) {
+//     return UserModel(
+//       uid: map['uid'],
+//       email: map['email'],
+//       firstName: map['firstName'],
+//       secondName: map['secondName'],
+//     );
+//   }
+
+//   // sending user data to the server
+//   Map<String, dynamic> toMap() {
+//     return {
+//       'uid': uid,
+//       'email': email,
+//       'firstName': firstName,
+//       'secondName': secondName,
+//     };
+//   }
+// }
+
+// class RegistrationScreen extends StatefulWidget {
+//   const RegistrationScreen({Key? key}) : super(key: key);
+
+//   @override
+//   _RegistrationScreenState createState() => _RegistrationScreenState();
+// }
+
+// class _RegistrationScreenState extends State<RegistrationScreen> {
+//   final _auth = FirebaseAuth.instance;
+
+//   // string for displaying the error Message
+//   String? errorMessage;
+
+//   // our form key
+//   final _formKey = GlobalKey<FormState>();
+//   // editing Controller
+//   final firstNameEditingController = new TextEditingController();
+//   final secondNameEditingController = new TextEditingController();
+//   final emailEditingController = new TextEditingController();
+//   final passwordEditingController = new TextEditingController();
+//   final confirmPasswordEditingController = new TextEditingController();
 
 class Generated41_addnewsportWidget extends StatelessWidget {
   @override
@@ -279,3 +333,63 @@ class Generated41_addnewsportWidget extends StatelessWidget {
     ));
   }
 }
+
+//   // sign up function creating user in firebase authentication
+//   void signUp(String email, String password) async {
+//     if (_formKey.currentState!.validate()) {
+//       try {
+//         await _auth.createUserWithEmailAndPassword(email: email, password: password).then((value) => {postDetailsToFirestore()}).catchError((e) {
+//           Fluttertoast.showToast(msg: e!.message);
+//         });
+//       } on FirebaseAuthException catch (error) {
+//         switch (error.code) {
+//           case "invalid-email":
+//             errorMessage = "Your email address appears to be malformed.";
+//             break;
+//           case "wrong-password":
+//             errorMessage = "Your password is wrong.";
+//             break;
+//           case "user-not-found":
+//             errorMessage = "User with this email doesn't exist.";
+//             break;
+//           case "user-disabled":
+//             errorMessage = "User with this email has been disabled.";
+//             break;
+//           case "too-many-requests":
+//             errorMessage = "Too many requests";
+//             break;
+//           case "operation-not-allowed":
+//             errorMessage = "Signing in with Email and Password is not enabled.";
+//             break;
+//           default:
+//             errorMessage = "An undefined Error happened.";
+//         }
+//         Fluttertoast.showToast(msg: errorMessage!);
+//         print(error.code);
+//       }
+//     }
+//   }
+
+//   // posting details to Database async function
+//   postDetailsToFirestore() async {
+//     // calling our firestore
+//     // calling our user model
+//     // sedning these values
+
+//     FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
+//     User? user = _auth.currentUser;
+
+//     UserModel userModel = UserModel();
+
+//     // writing all the values to DB
+//     userModel.email = user!.email;
+//     userModel.uid = user.uid;
+//     userModel.firstName = firstNameEditingController.text;
+//     userModel.secondName = secondNameEditingController.text;
+
+//     await firebaseFirestore.collection("users").doc(user.uid).set(userModel.toMap());
+//     Fluttertoast.showToast(msg: "Account created successfully :) ");
+//     Navigator.pushAndRemoveUntil((context), MaterialPageRoute(builder: (context) => Generated2_signinWidget()), (route) => false);
+//   }
+  
+// }
