@@ -67,7 +67,6 @@ class mvpupdatedApp extends StatelessWidget {
         '/Generated12_createaccountWidget': (context) => HomeScreen(), // Home screen - Logged in
         '/Generated40_trainermenuWidget': (context) => Generated40_trainermenuWidget(), // Trainer - menu page
         '/Generated41_addnewsportWidget': (context) => Generated41_addnewsportWidget(), // Trainer - Add new sports
-        // continue from this point
         '/Generated42_sportcreatedWidget': (context) => Generated42_sportcreatedWidget(), // Trainer - New sport was created
         '/Generated43_sportsWidget': (context) => Generated43_sportsWidget(), // Trainer - View sports list
         // Parent menu page (context) =>     (),

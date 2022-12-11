@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterapp/mvpupdatedapp/generated3_signinwidget/generated/BackSportspage.dart';
 import 'package:flutterapp/mvpupdatedapp/generated41_addnewsportwidget/generated/GeneratedComponent60Widget1.dart';
 import 'package:flutterapp/mvpupdatedapp/generated41_addnewsportwidget/generated/GeneratedComponent60Widget4.dart';
 import 'package:flutterapp/mvpupdatedapp/generated41_addnewsportwidget/generated/GeneratedFrame650Widget.dart';
@@ -116,6 +117,16 @@ class Generated41_addnewsportWidget extends StatelessWidget {
                           width: null,
                           height: 55.0,
                           child: GeneratedComponent60Widget(),
+                        ),
+                        // back
+                        Positioned(
+                          left: 3.0,
+                          top: 70.0,
+                          right: null,
+                          bottom: null,
+                          width: 53.0,
+                          height: 33.0,
+                          child: GeneratedBackWidgetsports(),
                         ),
                         Positioned(
                           left: 25.0,
